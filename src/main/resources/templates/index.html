@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head th:replace="layout :: head('explore')"></head>
+<body>
+    <h1>Study Guide Tool</h1>
+
+    <!--<img th:src="@{/images/photo1.png}" alt="example photo">-->
+    <!--<h1>Form</h1>-->
+    <!--<form action="#" th:action="@{/add}" th:object="${topic}" method="GET">-->
+        <!--Name: <input type="text" topicName="topicName" th:field="*{topicName}"/><br/>-->
+        <!--Description: <input type="text" topicName="topicDescription" th:field="*{topicDescription}"/><br/>-->
+    <!--</form>-->
+
+    <!--< class="row">-->
+        <div th:each="topic : ${topics}" class="col s12 l4">
+            <div class="card-title">
+                <a class="topicName" th:href="@{|/topics/${topic.id}|}"
+                   th:text="${topic.topicName}">Category Name</a>
+                <p th:text="${topic.topicDescription}"></p>
+
+                <!--<a class="edit" th:href="@{|/categories/${cat.id}/edit|}"><i class="hide-on-med-and-down material-icons">more_horiz</i><i class="hide-on-large-only medium material-icons">more_horiz</i></a>-->
+            </div>
+        </div>
+    <!--</div>-->
+    <!--<section class="section container" id="tabItem">-->
+        <!--<div class="row">-->
+            <!--<div class="col l12">-->
+                <!--<h5 class="indigo-text text-darken-4">Enter a tab topicName</h5>-->
+            <!--</div>-->
+            <!--<div class="col l12">-->
+                <!--<form action="">-->
+                    <!--<div class="input-field">-->
+                        <!--<input placeholder="tab topicName" id="tab-topicName" type="text" class="validate">-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;<div class="input-field">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<input placeholder="Resource link" id="tab-topicName" type="text"&ndash;&gt;-->
+                               <!--&lt;!&ndash;class="validate">&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!---->
+                <!--</form>-->
+                <!--<div class="input-field col l12">-->
+                    <!--<select>-->
+                      <!--<option value="" disabled selected>Choose your option</option>-->
+                      <!--<option value="1">Document</option>-->
+                      <!--<option value="2">Video</option>-->
+                      <!--<option value="3">Simulation</option>-->
+                      <!--<option value="4">Other</option>-->
+                    <!--</select>-->
+                    <!--<label>Type of Content</label>-->
+                  <!--</div>-->
+
+            <!--</div>-->
+        <!--</div>-->
+    <!--</section>-->
+    <div th:replace="layout :: scripts"></div>
+</body>
+</html>
