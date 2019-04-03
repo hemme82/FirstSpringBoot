@@ -5,6 +5,30 @@
 </head>
 <body>
 
+<div class="row">
+    <div class="input-field col s12 l4">
+        <!--th:classappend="${#fields.hasErrors('colorCode')}? 'error' : ''">-->
+        <!--<select th:field="*{typeOfContent}" name="typeOfContent" class="cs-select-->
+        <!--cs-skin-border">-->
+        <!--<option value="" disabled="disabled">Type of Content</option>-->
+        <!--<option th:each="type : ${typeOfContent}"></option>-->
+        <!--th:value="${typeOfContent.get}" th:text="${color.name}"-->
+        <!--&lt;!&ndash;th:style="|color:${color.hexCode}|">Aqua</option>&ndash;&gt;-->
+        <!--</select>-->
+        <!--<div class="error-message" th:if="${#fields.hasErrors('colorCode')}"-->
+        <!--th:errors="*{colorCode}"></div>-->
+
+        <select>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">DOCUMENT</option>
+            <option value="2">VIDEO</option>
+            <option value="3">SIMULATION</option>
+            <option value="4">OTHER</option>
+        </select>
+        <label>Type Of Content</label>
+    </div>
+</div>
+
 <div th:replace="layout :: scripts"></div>
 </body>
 </html>

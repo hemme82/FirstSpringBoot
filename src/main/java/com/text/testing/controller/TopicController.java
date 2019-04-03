@@ -3,11 +3,10 @@ package com.text.testing.controller;
 
 import com.text.testing.model.Topic;
 import com.text.testing.repository.TopicRepository;
-import com.text.testing.service.TopicService;
-import com.text.testing.service.TopicService2;
+//import com.text.testing.service.TopicService;
+//import com.text.testing.service.TopicService2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,12 +33,19 @@ public class TopicController {
 
 
 
-    @PostMapping("/add")
-    public String save(@RequestBody Topic topic) {
+    @GetMapping("/topicform")
+    public String topicForm(){
+//            @RequestBod Topic topic) {
 
+//
+
+        return "topicform";
+    }
+
+    @PostMapping("/addtopic")
+    public String addTopic(@RequestBody Topic topic) {
         topicRepository.save(topic);
-
-        return "redirect:/topics";
+        return "redirect/topics";
     }
 
 
