@@ -12,7 +12,7 @@ public class Topic {
     private Long id;
     private String topicName;
 
-    @Lob
+//    @Lob
 //    @Column(topicName="desc", length=1024)
     private String topicDescription;
 
@@ -22,8 +22,8 @@ public class Topic {
     public Topic() {
     }
 
-    public Topic(Long id, String description, List<TabItem> tabItems) {
-        this.id = id;
+    public Topic( String topicName, String description, List<TabItem> tabItems) {
+        this.topicName= topicName;
         this.topicDescription = description;
         this.tabItems = tabItems;
     }
