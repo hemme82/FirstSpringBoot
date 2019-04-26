@@ -2,8 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeLeaf.org">
 <head th:replace="layout :: head('Topic List')"></head>
 <body>
-    <h1>Study Guide</h1>
-
+<div class="container">
+    <h1>Attendance</h1>
+</div>
     <!--<img th:src="@{/images/photo1.png}" alt="example photo">-->
     <!--<h1>Form</h1>-->
     <!--<form action="#" th:action="@{/add}" th:object="${topic}" method="GET">-->
@@ -12,6 +13,7 @@
     <!--</form>-->
 
     <!--< class="row">-->
+    <div class="container">
         <div th:each="topic : ${topics}" class="col s12 l4">
             <div class="card-title">
                 <a class="topicName" th:href="@{|/topics/${topic.id}|}"
@@ -21,6 +23,7 @@
                 <!--<a class="edit" th:href="@{|/categories/${cat.id}/edit|}"><i class="hide-on-med-and-down material-icons">more_horiz</i><i class="hide-on-large-only medium material-icons">more_horiz</i></a>-->
             </div>
         </div>
+    </div>
     <form action="/logout" method="post">
         <!--<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>-->
         <button type = "submit">Logout</button>

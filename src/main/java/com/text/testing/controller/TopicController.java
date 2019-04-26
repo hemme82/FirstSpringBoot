@@ -2,10 +2,9 @@ package com.text.testing.controller;
 
 
 import com.text.testing.model.Topic;
-import com.text.testing.repository.TopicRepository;
 //import com.text.testing.service.TopicService;
-//import com.text.testing.service.TopicService2;
-import javassist.NotFoundException;
+//import com.text.testing.service.TopicService;
+import com.text.testing.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -21,14 +20,14 @@ import java.util.Optional;
 public class TopicController {
 
     @Autowired
-    private TopicRepository topicRepository;
+    private TopicService topicService;
 
 
     @GetMapping("/topics")
     public String listTopics(ModelMap model) {
 
 
-        List<Topic> topics = (List<Topic>) topicRepository.findAll();
+        List<Topic> topics = (List<Topic>) topicService.getAllTopics();
 
         model.addAttribute("topics", topics);
         return "index";
@@ -37,17 +36,24 @@ public class TopicController {
     @GetMapping("/topics/{topicId}")
     public String getTopic(@PathVariable Long topicId,
                            ModelMap model, HttpServletResponse response) throws IOException {
-        Optional<Topic> topicOptional = topicRepository.findById(topicId);
+        Optional<Topic> topicOptional = topicService.findTopicById(topicId);
 
         if (topicOptional.isPresent()) {
             Topic topic = topicOptional.get();
             model.put("topic", topic);
+//            model.put("tabItems", topic.getTabItems());
 
         } else {
             response.sendError(HttpStatus.NOT_FOUND.value(), "Topic with id " + topicId + " was not found" );
 //            throw new NotFoundException("Topic with id " + topicId + " was not found");
             return "topic";
         }
+
+//        Topic topic = topicService.findTopicById(topicId).orElseThrow(new NotFoundException(
+//                "Could not find " +
+//                "object with id: " + id));
+
+
         return"topic";
     }
     @GetMapping("/topicform")
@@ -58,9 +64,10 @@ public class TopicController {
 
     @PostMapping("/addtopic")
     public String addTopic(Topic topic) {
-        topicRepository.save(topic);
+        topicService.saveTopic(topic);
         return "redirect:/topics/"+topic.getId();
     }
+    //work in progress
     @PostMapping("/topics/{topicId}")
     public String updateTopic(@PathVariable Long topicId, Topic topic){
         System.out.println(topic);

@@ -12,7 +12,7 @@ public class TabItem {
     private Long id;
     private String tabName;
     private String tabUrl;
-    @ManyToOne
+    @ManyToOne(cascade =CascadeType.ALL)
     @JoinColumn(name="topic")
     private Topic topic;
     private TypeOfContent typeOfContent;
@@ -28,6 +28,7 @@ public class TabItem {
     }
 
     public static enum TypeOfContent{
+        //TODO: add string value to enum
         DOCUMENT, VIDEO, SIMULATION, OTHER
     }
 

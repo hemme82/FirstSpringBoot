@@ -1,0 +1,29 @@
+
+.modal {
+    width: 50% !important;
+    height: 75% !important;
+}
+/* .tabs .tab a{
+    color:#000;
+    background-color:#ddd;
+
+} /*Black color to the text*/
+
+/*.tabs .tab a:hover {
+    background-color:#eee;
+    color:#000;
+} /*Text color on hover*/
+
+/*.tabs .tab .tab.active a.focus a:focus.active{
+    background-color: rgba(0, 0, 0, 0);
+    color:#000;
+} /*Background and text color when a tab is active*/
+
+/*a:active{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/*.tabs .indicator {
+    background-color:#000;
+} /*Color of underline*/
+

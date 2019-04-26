@@ -16,7 +16,7 @@ public class Topic {
 //    @Column(topicName="desc", length=1024)
     private String topicDescription;
 
-    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy= "topic")
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy= "topic")
     List<TabItem> tabItems = new ArrayList<>();
 
     public Topic() {

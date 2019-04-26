@@ -2,11 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeLeaf.org">
 <head th:fragment="head(page_title)" lang="en">
     <meta charset="UTF-8">
+
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
+    <link rel="stylesheet" th:href="@{/css/studyguide.css}" type="text/css">
 
     <title th:text="'Study Guide | ' + ${page_title}">Study Guide Create</title>
 </head>

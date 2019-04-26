@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
-public class TopicService2 {
+public class TopicService {
     @Autowired
     private TopicRepository topicRepository;
 
@@ -19,7 +20,13 @@ public class TopicService2 {
         return topics;
     }
 
-    public void addTopic(Topic topic){
+    public void saveTopic(Topic topic){
+
         topicRepository.save(topic);
+    }
+
+    public Optional<Topic> findTopicById(Long id){
+        return topicRepository.findById(id);
+
     }
 }
