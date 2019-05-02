@@ -12,7 +12,7 @@ public class TabItem {
     private Long id;
     private String tabName;
     private String tabUrl;
-    @ManyToOne(cascade =CascadeType.ALL)
+    @ManyToOne//cascade =CascadeType.ALL)
     @JoinColumn(name="topic")
     private Topic topic;
     private TypeOfContent typeOfContent;

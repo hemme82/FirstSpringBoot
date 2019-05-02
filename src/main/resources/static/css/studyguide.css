@@ -3,15 +3,20 @@
     width: 50% !important;
     height: 75% !important;
 }
-/* .tabs .tab a{
+.tab{
+    border-style: solid;
+    border-width: .2px 0px 0px 0px;
+    border-color: #D3D3D3;
+}
+.tabs .tab a{
     color:#000;
-    background-color:#ddd;
+    background-color: white;
+}
+/*Black color to the text*/
 
-} /*Black color to the text*/
-
-/*.tabs .tab a:hover {
+.tabs .tab a:hover {
     background-color:#eee;
-    color:#000;
+    color:#A9A9A9;
 } /*Text color on hover*/
 
 /*.tabs .tab .tab.active a.focus a:focus.active{
@@ -26,4 +31,8 @@
 /*.tabs .indicator {
     background-color:#000;
 } /*Color of underline*/
+/*.tabs{
+    border-style: solid;
+    border-width: .2px .2px;
+}
 

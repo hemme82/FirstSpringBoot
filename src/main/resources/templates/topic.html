@@ -18,13 +18,17 @@
             <ul class="tabs">
                 <!--existing tabs-->
                 <li th:each="tabItem : ${topic.tabItems}" class="tab col s3">
-                    <a th:href="'#' + ${tabItem.id}"
+                    <a class="active" th:href="'#' + ${tabItem.id}"
                        th:text="${tabItem.tabName}">
                     </a>
                 </li>
                 <!--add a tab-->
-                <li class="tab col s3" style="max-width:25px"  >
-                    <a href="#tabForm" class= "modal-trigger" font-weight="bold">+</a>
+                <li class="tab col s3" style="max-width:75px">
+
+                    <a href="#tabForm" class= "modal-trigger">
+                        <i class="material-icons">add</i>
+                    </a>
+
                     <!--This is the modal-->
                     <div class="modal" id = "tabForm">
                         <form class="col s12" th:action="@{/addtabitem}"  th:object="${tabItem}"method="post">
@@ -38,6 +42,12 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="input-field col s12 l6">
+                                        <input type="text" id="toolCode" name="toolCode">
+                                        <label for="toolCode">Tool Code</label>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="input-field col s12 l12">
                                         <input type="text" id="tabUrl"
                                                name="tabUrl">
@@ -45,23 +55,26 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <select name="typeOfContent" class = "col s12 l6">
+                                    <select name="typeOfContent" class = "col s6 l6">
                                         <option value="" disabled selected>TYPE OF CONTENT</option>
                                         <option value="DOCUMENT">DOCUMENT</option>
-                                        <option value="2">VIDEO</option>
-                                        <option value="3">SIMULATION</option>
-                                        <option value="4">OTHER</option>
+                                        <option value="VIDEO">VIDEO</option>
+                                        <option value="SIMULATION">SIMULATION</option>
+                                        <option value="OTHER">OTHER</option>
                                     </select>
                                 </div>
-                                <div class="col s12 l8">
+                                <div class="right-align">
                                     <button class="waves-effect waves-light btn" id="createTopic" type="submit"
                                     >New Tab</button>
                                 </div>
                             </div>
                         </form>
                     </div>
+
                 </li>
+
             </ul>
+
             <br>
             <!--tab content-->
 
