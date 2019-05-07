@@ -1,16 +1,24 @@
 
+#addATab{
+    max-width: 75px;
+    border-style: solid;
+    border-width: 0px 0px 0px 0.2px;
+    border-color: black;
+
+}
 .modal {
     width: 50% !important;
     height: 75% !important;
 }
 .tab{
-    border-style: solid;
-    border-width: .2px 0px 0px 0px;
-    border-color: #D3D3D3;
+    /*border-style: solid;
+    border-width: .2px;
+    border-color: black;*/
 }
 .tabs .tab a{
     color:#000;
-    background-color: white;
+    background-color: #eee9e9;
+    margin: 0px 25px 0px 0px;
 }
 /*Black color to the text*/
 
